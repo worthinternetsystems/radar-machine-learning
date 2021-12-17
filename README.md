@@ -1,4 +1,4 @@
-# neural-network-workshop
+# Jupyter notebook
 
 ## Installation Instructions
 
