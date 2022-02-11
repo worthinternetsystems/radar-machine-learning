@@ -11,10 +11,12 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
-      - name: Push to Docker Hub
-        uses: docker/build-push-action@v2
+      - name: Login to DockerHub
+        uses: docker/login-action@v1 
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: primednumber/jupyter-ml:latest
-          tag_with_ref: true
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v2
+        with:
+          tags: primednumber/jupyter-ml:latest
