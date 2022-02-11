@@ -1,0 +1,20 @@
+name: Publish Docker Image
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: primednumber/jupyter-ml:latest
+          tag_with_ref: true
