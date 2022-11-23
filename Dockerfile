@@ -5,3 +5,4 @@ RUN pip3 install pandas
 RUN pip3 install pillow
 RUN pip3 install scikit-learn
 RUN pip3 install opendatasets
+RUN pip3 install geopandas
