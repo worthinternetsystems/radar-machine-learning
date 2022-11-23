@@ -1,4 +1,6 @@
 .vscode
 .ipynb_checkpoints/
 .DS_Store
+kaggle.json
+2000*
 *_model/*
